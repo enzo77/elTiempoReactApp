@@ -1,6 +1,6 @@
 import React from 'react';
 import WeatherTemperature from './WeatherTemperature';
-import WeatherExtraInfo from './/WeatherExtraInfo';
+import WeatherExtraInfo from './WeatherExtraInfo';
 import { SNOW } from './../constants/weather';
 
 const WeatherData = () => (
