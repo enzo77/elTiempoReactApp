@@ -4,7 +4,7 @@ import WeatherData from './WeatherData';
 import { SNOW } from './../../constants/weather';
 
 const data = { 
-    temperature: 20,
+    temperature: 20,   
     weatherState: SNOW,
     humidity: 10 ,
     wind: '10 m/s',
@@ -12,8 +12,8 @@ const data = {
 
 const WeatherLocation = () => (
     <div>
-        <Location city = { 'Kuki'  } /> 
-        <WeatherData data = { data  } />
+        <Location city = { 'Nova York'  } /> 
+        <WeatherData data = { data } />
     </div>
 )
 
