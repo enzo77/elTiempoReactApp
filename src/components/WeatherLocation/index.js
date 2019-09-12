@@ -6,7 +6,7 @@ import { SNOW , WINDY } from './../../constants/weather';
 const data1 = { 
     temperature: 20,
     weatherState: SNOW,
-    humidity: 10 ,
+    humidity: 10,
     wind: '10 m/s',
  }
 
