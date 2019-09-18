@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Location from './Location';
 import WeatherData from './WeatherData';
-import { SNOW, CLOUDY } from './../../constants/weather';
+import transformWeather from './../../service/transformWeather';
+import { SNOW } from './../../constants/weather';
 
 const location = "Barcelona";
 const api_key = "9baf99c72740d9bfafc2a4909e5b7a9b";
@@ -24,31 +25,12 @@ class WeatherLocation extends Component {
         }
     } 
 
-    getWeatherState = (weather) => {
-        return CLOUDY;
-    }
-
-    getData = ( weather_data ) => {
-        const { humidity , temp} = weather_data.main;
-        const { speed } = weather_data.wind;
-        const weatherState = this.getWeatherState(this.weather);
-
-        const data = {
-            humidity, // sólo con humidity igual prop simple
-            temperature : temp,
-            weatherState: weatherState, 
-            wind: `${speed} m/s`
-        }
-
-        return data;
-    }
-
     handleUpdateClick = () => { 
         fetch(api_weather).then( data => {
             console.log("data", data )
             return data.json();
         }).then( weather_data => {
-            const data = this.getData(weather_data);
+            const data = transformWeather(weather_data);
             
             this.setState({ 
                 data : data,
