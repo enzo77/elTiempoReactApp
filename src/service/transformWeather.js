@@ -2,7 +2,8 @@ import { CLOUDY } from './../constants/weather';
 import convert from 'convert-units';
 
 const getTemp = Kelvin => {
-    return convert(Kelvin).from('K').to('C').toFixed(2);
+    let convertCelsius = convert(Kelvin).from('K').to('C').toFixed(2);
+    return Number(convertCelsius);
 }
 
 const getWeatherState = () => {
