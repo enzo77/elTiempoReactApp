@@ -3,7 +3,7 @@ import Location from './Location';
 import WeatherData from './WeatherData';
 import transformWeather from './../../service/transformWeather';
 
-const location = "Barcelona";
+const location = "Barcellona";
 const api_key = "9baf99c72740d9bfafc2a4909e5b7a9b";
 const api_weather = `http://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${api_key}`;
 
