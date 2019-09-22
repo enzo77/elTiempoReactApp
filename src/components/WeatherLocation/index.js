@@ -1,26 +1,28 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Location from './Location';
 import WeatherData from './WeatherData';
 import transformWeather from './../../service/transformWeather';
 import Spinner from './../../utility/spinner';
-
-const location = "Barcelona";
+ 
+const url = "http://api.openweathermap.org/data/2.5/weather";
 const api_key = "9baf99c72740d9bfafc2a4909e5b7a9b";
-const api_weather = `http://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${api_key}`;
 
 class WeatherLocation extends Component { 
 
-    constructor() { 
+    constructor({ city }) { 
         super();
         this.state = { 
             data : null,
-            city: 'Maranello'
+            city
         }
     } 
+    
+    componentWillMount() {
+        const  { city } = this.state;
+        const api_weather = `${url}?q=${city}&appid=${api_key}`;
 
-    handleUpdateClick = () => { 
         fetch(api_weather).then( data => {
-            console.log("data", data )
             return data.json();
         }).then( weather_data => {
             const data = transformWeather(weather_data);
@@ -29,21 +31,11 @@ class WeatherLocation extends Component {
                 data : data,
                 city: 'Barcelona'
             });
-
-            console.log("weather_data", weather_data )
         });
-        
-    }
-
-    
-    componentWillMount() {
-        this.handleUpdateClick();
     }
     
     componentDidMount() {}
-    
     componentWillUpdate(nextProps, nextState) {}
-    
     componentDidUpdate(){}
 
     render = () => {
@@ -54,6 +46,10 @@ class WeatherLocation extends Component {
                 {data ? <WeatherData data = { data } /> : <Spinner /> }
             </div> )
         }
+    }
+
+    WeatherLocation.propTypes = {
+        city: PropTypes.string
     };
 
 export default WeatherLocation;
