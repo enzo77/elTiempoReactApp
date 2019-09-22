@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import Location from './Location';
 import WeatherData from './WeatherData';
 import transformWeather from './../../service/transformWeather';
+import Spinner from './../../utility/spinner';
 
-const location = "Barcellona";
+const location = "Barcelona";
 const api_key = "9baf99c72740d9bfafc2a4909e5b7a9b";
 const api_weather = `http://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${api_key}`;
 
@@ -50,7 +51,7 @@ class WeatherLocation extends Component {
         return (
             <div>
                 <Location city = { city  } /> 
-                {data ? <WeatherData data = { data } /> : 'Cagando...'}
+                {data ? <WeatherData data = { data } /> : <Spinner /> }
             </div> )
         }
     };
