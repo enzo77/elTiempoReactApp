@@ -29,7 +29,7 @@ class WeatherLocation extends Component {
             
             this.setState({ 
                 data : data,
-                city: 'Barcelona'
+                city
             });
         });
     }

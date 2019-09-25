@@ -1,4 +1,4 @@
-import { CLOUDY } from './../constants/weather';
+import { CLOUDY,SUN,RAIN,SNOW,THUNDER,DRIZZLE } from './../constants/weather';
 import convert from 'convert-units';
 
 const getTemp = Kelvin => {
@@ -6,19 +6,33 @@ const getTemp = Kelvin => {
     return Number(convertCelsius);
 }
 
-const getWeatherState = () => {
-    return CLOUDY;
+const getWeatherState = (weather) => {
+    const { id } = weather[0];
+
+    if (id < 300) {
+        return THUNDER;
+    } else if (id < 400) {
+        return DRIZZLE;
+    } else if (id < 600) {
+        return RAIN;
+    } else if (id < 700) {
+        return SNOW;
+    } else if (id === 800) {
+        return SUN;
+    } else {
+        return CLOUDY;
+    }
 }
 
 const transformWeather =  weather_data  => {
+    const { weather } = weather_data;
     const { humidity , temp} = weather_data.main;
     const { speed } = weather_data.wind;
-
-    const weatherState = getWeatherState();
+    const weatherState = getWeatherState(weather);
     const temperature = getTemp(temp);
-
+  
     const data = {
-        humidity, // sólo con humidity igual prop simple
+        humidity, 
         temperature,
         weatherState, 
         wind: `${speed} m/s`

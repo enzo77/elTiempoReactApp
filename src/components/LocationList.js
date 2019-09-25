@@ -4,6 +4,8 @@ import WeatherLocation from './WeatherLocation';
 const LocationList = () => (
     <div>
        <WeatherLocation city = { 'Barcelona' } />
+       <WeatherLocation city = { 'Madrid' } />
+       <WeatherLocation city = { 'Londres' } />
     </div>
 )
 
