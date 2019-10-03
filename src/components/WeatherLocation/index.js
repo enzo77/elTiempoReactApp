@@ -11,14 +11,17 @@ const api_key = "9baf99c72740d9bfafc2a4909e5b7a9b";
 class WeatherLocation extends Component { 
 
     constructor({ city }) { 
+        
         super();
         this.state = { 
             data : null,
             city
         }
+       
     } 
     
     componentWillMount() {
+  
         const  { city } = this.state;
         const api_weather = `${url}?q=${city}&appid=${api_key}`;
 
