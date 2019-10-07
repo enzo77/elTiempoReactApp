@@ -1,27 +1,28 @@
+//Setup
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+//Components
 import Location from './Location';
 import WeatherData from './WeatherData';
 import transformWeather from './../../service/transformWeather';
+//Assets
 import Spinner from './../../utility/spinner';
- 
+import './styles.css';
+
 const url = "http://api.openweathermap.org/data/2.5/weather";
 const api_key = "9baf99c72740d9bfafc2a4909e5b7a9b";
 
 class WeatherLocation extends Component { 
 
     constructor({ city }) { 
-        
         super();
         this.state = { 
             data : null,
             city
         }
-       
     } 
     
     componentWillMount() {
-  
         const  { city } = this.state;
         const api_weather = `${url}?q=${city}&appid=${api_key}`;
 
@@ -42,17 +43,20 @@ class WeatherLocation extends Component {
     componentDidUpdate(){}
 
     render = () => {
+        const { onWeatherLocationClick } = this.props;
         const { city, data } = this.state;
-        return (
-            <div>
-                <Location city = { city  } /> 
-                {data ? <WeatherData data = { data } /> : <Spinner /> }
-            </div> )
+        return ( 
+                <div className='weatherLocationCont' onClick={onWeatherLocationClick}>
+                    <Location city = { city  } /> 
+                    {data ? <WeatherData data = { data } /> : <Spinner /> }
+                </div> 
+            )
         }
     }
 
     WeatherLocation.propTypes = {
-        city: PropTypes.string
+        city: PropTypes.string,
+        onWeatherLocationClick: PropTypes.func,
     };
 
 export default WeatherLocation;

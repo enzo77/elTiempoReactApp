@@ -38,7 +38,7 @@ const transformWeather =  weather_data  => {
         wind: `${speed} m/s`
     }
 
-    return data;
+    return data;    
 }
 
 export default transformWeather;
