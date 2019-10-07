@@ -5,12 +5,18 @@ import './App.css';
 const city = ['Barcelona', 'Madrid', 'Londres'];
 
 class App extends Component {
+
+  handleSelectedLocation = city => {
+    //this.props.setSelectedCity(city);
+    console.log("handleSelectedLocation")
+  }
   
   render() {
 
     return (
     <div className="App">
-       <LocationList city = { city } />
+       <LocationList city = { city } 
+       onSelectedLocation = {this.handleSelectedLocation}/>
 		</div>
     );
   }
