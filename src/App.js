@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import LocationList from './components/LocationList';
 import './App.css';
 
-const city = ['Barcelona', 'Madrid', 'Londres'];
+const cities = ['Barcelona', 'Madrid', 'Londres'];
 
 class App extends Component {
 
@@ -15,7 +15,7 @@ class App extends Component {
 
     return (
     <div className="App">
-       <LocationList city = { city } 
+       <LocationList cities = { cities } 
        onSelectedLocation = {this.handleSelectedLocation}/>
 		</div>
     );
