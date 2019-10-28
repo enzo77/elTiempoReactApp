@@ -21,14 +21,15 @@ class App extends Component {
       console.log("handleSelectedLocation")
     }
   
-  render() {
-    return (
-    <div className="App">
-      <LocationList cities = { cities } 
-      onSelectedLocation = {this.handleSelectedLocation}/>
-		</div>
-    );
-  }
+    render() {
+        return (
+          <div className="App">
+            <LocationList cities = { cities } 
+              onSelectedLocation = {this.handleSelectedLocation}/>
+          </div>
+        );
+    }
+    
 }
 
 export default App;
