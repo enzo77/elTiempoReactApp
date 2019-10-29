@@ -13,20 +13,21 @@ const url = "http://api.openweathermap.org/data/2.5/weather";
 const api_key = "9baf99c72740d9bfafc2a4909e5b7a9b";
 
 class WeatherLocation extends Component { 
-
-    constructor({ city }) { 
+  
+    constructor({ city, onWeatherLocationClick }) { 
         super();
         this.state = { 
             data : null,
             city
         }
+       
     } 
-    
+
     componentWillMount() {
         console.log(">>>>" , this.state)
         const  { city } = this.state;
         const api_weather = `${url}?q=${city}&appid=${api_key}`;
-
+     
         fetch(api_weather).then( data => {
             return data.json();
         }).then( weather_data => {
@@ -38,7 +39,7 @@ class WeatherLocation extends Component {
             });
         });
     }
-    
+
     componentDidMount() {}
     componentWillUpdate(nextProps, nextState) {}
     componentDidUpdate(){}
@@ -46,12 +47,12 @@ class WeatherLocation extends Component {
     render = () => {
         const { onWeatherLocationClick } = this.props;
         const { city, data } = this.state;
-        console.log(">>>> ptopriedades" , this.props )
+       
         return ( 
-                <div className='weatherLocationCont' onClick={onWeatherLocationClick}>
-                    <Location city = { city  } /> 
-                    {data ? <WeatherData data = { data } /> : <Spinner /> }
-                </div> 
+            <div className='weatherLocationCont' onClick={onWeatherLocationClick} >
+                <Location city = { city } /> 
+                {data ? <WeatherData data = { data } /> : <Spinner /> }
+            </div> 
             )
         }
     }
