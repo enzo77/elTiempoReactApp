@@ -23,6 +23,7 @@ class WeatherLocation extends Component {
     } 
     
     componentWillMount() {
+        console.log(">>>>" , this.state)
         const  { city } = this.state;
         const api_weather = `${url}?q=${city}&appid=${api_key}`;
 
@@ -45,6 +46,7 @@ class WeatherLocation extends Component {
     render = () => {
         const { onWeatherLocationClick } = this.props;
         const { city, data } = this.state;
+        console.log(">>>> ptopriedades" , this.props )
         return ( 
                 <div className='weatherLocationCont' onClick={onWeatherLocationClick}>
                     <Location city = { city  } /> 
