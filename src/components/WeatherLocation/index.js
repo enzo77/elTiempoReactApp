@@ -20,8 +20,7 @@ class WeatherLocation extends Component {
             data : null,
             city
         }
-       
-    } 
+    }
 
     componentWillMount() {
         const  { city } = this.state;
