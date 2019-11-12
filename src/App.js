@@ -22,8 +22,8 @@ class App extends Component {
         super();
 
         this.state = { 
-            city : "Maranello",
-        }
+            city : null
+        };
     }
 
     handleSelectedLocation = city => {
@@ -48,7 +48,10 @@ class App extends Component {
 
                     <Col xs={12} md={6}>
                          <div className='detail'>
-                            <ForecastExtended city={city}/>
+                        {
+                            city && <ForecastExtended city={city}/> // el null REACT lo interpreta como vacío
+                        }
+                            
                          </div>
                     </Col>
                 </Row>
