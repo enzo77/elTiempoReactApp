@@ -1,13 +1,29 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './styles.css'
+import ForecastItem from './ForecastItem';
+import './styles.css';
+
+const days =[
+    'lunes',
+    'martes',
+    'Miercoles',
+    'Jueves',
+    'Viernes'
+];
 
 class ForecastExtended extends Component {
+
+    renderForecastItemDays(){
+        return days.map( day => (<ForecastItem weekDay={ day }  /> ));
+    }
 
     render(){
         const  {city} = this.props;
         return(
-            <h2 className='forecast-title'>Pronóstico Extendido para {city}</h2>
+            <div>
+                <h2 className='forecast-title'>Pronóstico Extendido para {city}</h2>
+                {this.renderForecastItemDays()}
+            </div>
         )
     }
     
