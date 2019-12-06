@@ -23,7 +23,6 @@ class WeatherLocation extends Component {
     }
 
     componentWillMount() {
-        console.log(">>>>" , this.state)
         const  { city } = this.state;
         const api_weather = `${url}?q=${city}&appid=${api_key}`;
      
