@@ -35,7 +35,7 @@ class App extends Component {
     render() {
         const { city } = this.state;
 
-        return ( <Grid >
+        return ( <Grid>
             <Row >Titulo </Row> 
             <Row >
 
