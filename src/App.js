@@ -35,25 +35,27 @@ class App extends Component {
     render() {
         const { city } = this.state;
 
-        return ( <Grid>
-            <Row >Titulo </Row> 
-            <Row >
+        return (
+            <Grid>
+                <Row>Titulo </Row> 
+                <Row>
+                    <Col xs = { 12 }md = { 6 } >
+                        <LocationList cities = { cities }
+                        onSelectedLocation = { this.handleSelectedLocation } /> 
+                    </Col>
 
-            <Col xs = { 12 }md = { 6 } >
-               <LocationList cities = { cities }
-                 onSelectedLocation = { this.handleSelectedLocation } /> 
-            </Col>
+                    <Col xs = { 12 } md = { 6 }>
 
-            <Col xs = { 12 }md = { 6 } >
-            < div className = 'detail' > { 
-               city && < ForecastExtended city = { city } /> // el null REACT lo interpreta como vacío
-            }
-
-            </div> 
-            </Col></Row> </Grid>
+                    <div className = 'detail'>
+                        { 
+                            city && <ForecastExtended city = { city } /> // el null REACT lo interpreta como vacío
+                        } 
+                        </div> 
+                    </Col>
+                </Row>
+            </Grid>
         );
     }
-
 }
 
 export default App;
