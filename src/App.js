@@ -42,14 +42,15 @@ class App extends Component {
             <Col xs = { 12 }md = { 6 } >
                <LocationList cities = { cities }
                  onSelectedLocation = { this.handleSelectedLocation } /> 
-            </Col >
+            </Col>
 
             <Col xs = { 12 }md = { 6 } >
             < div className = 'detail' > { 
                city && < ForecastExtended city = { city } /> // el null REACT lo interpreta como vacío
             }
 
-            </div> </Col > </Row> </Grid >
+            </div> 
+            </Col></Row> </Grid>
         );
     }
 
