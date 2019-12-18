@@ -8,15 +8,15 @@ const LocationList = ({ cities , onSelectedLocation }) => {
         console.log(`handleWeatherLocationClick: ${city}`);
         onSelectedLocation(city);
     };
-    
+
     const strToComponent = cities => ( 
         cities.map( city => (
             <WeatherLocation 
                 city = {city}
                 key = {city}
-                onWeatherLocationClick = { () => handleWeatherLocationClick(city) } //envio la propieda onWeatherLocationClick al modulo con la funcion
-                />
-        ))  
+                onWeatherLocationClick = { () => handleWeatherLocationClick(city) }
+            />
+        ))
     );
 
     return (
