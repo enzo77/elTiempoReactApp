@@ -47,9 +47,7 @@ class App extends Component {
                     <Col xs = { 12 } md = { 6 }>
 
                     <div className = 'detail'>
-                        { 
-                            city && <ForecastExtended city = { city } /> // el null REACT lo interpreta como vacío
-                        } 
+                        {  city && <ForecastExtended city = { city } />  } 
                         </div> 
                     </Col>
                 </Row>
