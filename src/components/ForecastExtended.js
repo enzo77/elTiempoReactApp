@@ -27,7 +27,7 @@ class ForecastExtended extends Component {
         super();
         this.state = {
             forecastData : null
-        }
+        };
     }
 
     renderForecastItemDays(){
@@ -48,13 +48,13 @@ class ForecastExtended extends Component {
                 <h2 className='forecast-title'>Pronóstico Extendido para {city}</h2>
                 { forecastData ? this.renderForecastItemDays() : this.renderProgress() }
             </div>
-        )
+        );
     }
     
 }
 
 ForecastExtended.propTypes = {
     city: PropTypes.string.isRequired
-}
+};
 
 export default ForecastExtended;
