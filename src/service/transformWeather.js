@@ -36,9 +36,9 @@ const transformWeather =  weather_data  => {
         temperature,
         weatherState, 
         wind: `${speed} m/s`
-    }
+    };
 
     return data;    
-}
+};
 
 export default transformWeather;
