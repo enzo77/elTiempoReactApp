@@ -19,7 +19,7 @@ class WeatherLocation extends Component {
         this.state = { 
             data : null,
             city
-        }
+        };
     }
 
     componentWillMount() {
@@ -51,7 +51,7 @@ class WeatherLocation extends Component {
                 <Location city = { city } /> 
                 {data ? <WeatherData data = { data } /> : <Spinner /> }
             </div> 
-            )
+            );
         }
     }
 

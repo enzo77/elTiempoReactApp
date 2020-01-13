@@ -7,7 +7,7 @@ const ForecastItem = ({weekDay, hour, data}) => (
         <div>{weekDay} Hora {hour}</div>
         <WeatherData data = {data}/>
     </div>
-)
+);
 
 ForecastItem.propTypes = {
     weekDay: PropTypes.string.isRequired,
@@ -18,6 +18,6 @@ ForecastItem.propTypes = {
         humidity: PropTypes.number.isRequired,
         wind: PropTypes.string.isRequired,
     })
-}
+};
 
 export default ForecastItem;
