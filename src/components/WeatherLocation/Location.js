@@ -8,7 +8,7 @@ const Location = ({city}) => (
             { city }
             </h1>
         </div>
-    )
+    );
 
 Location.propTypes = {
     city: PropTypes.string.isRequired,

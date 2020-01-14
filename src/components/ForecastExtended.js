@@ -5,20 +5,20 @@ import transformForecast from './../service/transformForecast';
 import './styles.css';
 
 /*
-const days =[
-    'lunes',
-    'martes',
-    'Miercoles',
-    'Jueves',
-    'Viernes'
-];
+    const days =[
+        'lunes',
+        'martes',
+        'Miercoles',
+        'Jueves',
+        'Viernes'
+    ];
 
-const data = {
-    temperature: 10,
-    humidity: 10,
-    weatherState: 'normal',
-    wind: 'normal',
-} 
+    const data = {
+        temperature: 10,
+        humidity: 10,
+        weatherState: 'normal',
+        wind: 'normal',
+    } 
 */
 
 const url = "http://api.openweathermap.org/data/2.5/forecast";

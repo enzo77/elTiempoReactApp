@@ -27,9 +27,7 @@ class App extends Component {
     }
 
     handleSelectedLocation = city => {
-        //this.props.setSelectedCity(city);
         this.setState({ city });
-        console.log("handleSelectedLocation");
     }
 
     render() {
