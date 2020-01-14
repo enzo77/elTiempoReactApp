@@ -12,7 +12,7 @@ const transformForecast = data => (
             {
                 weekDay:  moment.unix(item.dt).format('ddd'),
                 hour:  moment.unix(item.dt).utc().hour(),
-                data:transformWeather(item)
+                data: transformWeather(item)
             }
     ))
 
