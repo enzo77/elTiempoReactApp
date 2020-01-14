@@ -27,7 +27,6 @@ const api_key = "9baf99c72740d9bfafc2a4909e5b7a9b";
 class ForecastExtended extends Component {
 
     constructor() {
-
         super();
         this.state = {
             forecastData : null
