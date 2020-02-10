@@ -4,7 +4,7 @@ import convert from 'convert-units';
 const getTemp = Kelvin => {
     let convertCelsius = convert(Kelvin).from('K').to('C').toFixed(2);
     return Number(convertCelsius);
-}
+};
 
 const getWeatherState = (weather) => {
     const { id } = weather[0];
@@ -22,7 +22,7 @@ const getWeatherState = (weather) => {
     } else {
         return CLOUDY;
     }
-}
+};
 
 const transformWeather =  weather_data  => {
     const { weather } = weather_data;

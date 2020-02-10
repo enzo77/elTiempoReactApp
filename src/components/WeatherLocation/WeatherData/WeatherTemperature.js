@@ -24,11 +24,11 @@ const stateToIconName = (weatherState) => {
         default:
             return "day-sunny";
     }
-}
+};
 
 const getWeatherIcon = (weatherState) => { 
     return ( <WeatherIcons className='wicon' name={ stateToIconName(weatherState) } size="2x" /> )
-}
+};
 
 const WeatherTemperature = ({ temperature , weatherState }) => (
     <div className='weatherTemperatureCont'>
@@ -36,7 +36,7 @@ const WeatherTemperature = ({ temperature , weatherState }) => (
         <span className='temperature'>{`${temperature}`}</span>
         <span className='temperaturetype'>C°</span>
     </div>
-)
+);
 
 WeatherTemperature.propTypes = {
     weatherState: PropTypes.string,

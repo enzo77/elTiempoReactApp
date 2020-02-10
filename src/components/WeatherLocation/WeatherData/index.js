@@ -12,7 +12,7 @@ const WeatherData = ({ data }) => {
             <WeatherTemperature temperature = {temperature} weatherState = {weatherState} />
             <WeatherExtraInfo humidity = {humidity} wind = {wind} />
         </div>
-    )
+    );
 };
 
 WeatherData.propTypes = {

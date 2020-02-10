@@ -7,7 +7,7 @@ const WeatherExtraInfo = ( { humidity,wind } ) => (
         <span className='extraInfoText' >{`Humedad: ${humidity} %`}</span>
         <span className='extraInfoText' >{`Vientos: ${wind}`}</span>
     </div>
-)
+);
 
 WeatherExtraInfo.propTypes = {
     humidity: PropTypes.number.isRequired,

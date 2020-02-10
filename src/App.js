@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import { Grid, Row, Col } from 'react-flexbox-grid';
-import LocationList from './components/LocationList';
+import LocationListContainer from './containers/LocationListContainer';
 import ForecastExtended from './components/ForecastExtended';
-import { setCity } from './actions';
 
 import './App.css';
 
@@ -26,12 +24,6 @@ class App extends Component {
         this.state = {city: null};
     }
 
-    handleSelectedLocation = city => {
-        this.setState({ city });
-
-        this.props.setCity(city);
-    }
-
     render() {
         const { city } = this.state;
 
@@ -40,8 +32,7 @@ class App extends Component {
                 <Row>Titulo </Row> 
                 <Row>
                     <Col xs = { 12 }md = { 6 } >
-                        <LocationList cities = { cities }
-                        onSelectedLocation = { this.handleSelectedLocation } /> 
+                        <LocationListContainer cities = { cities } /> 
                     </Col>
 
                     <Col xs = { 12 } md = { 6 }>
@@ -55,10 +46,5 @@ class App extends Component {
     }
 }
 
-const mapDispatchToPropsActions = dispatch => ({ 
-    setCity: value => dispatch(setCity(value))
-});
 
-const AppConnected = connect(null, mapDispatchToPropsActions)(App);
-
-export default AppConnected;
+export default App;
