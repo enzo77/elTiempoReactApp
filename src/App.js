@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import LocationListContainer from './containers/LocationListContainer';
-import ForecastExtended from './components/ForecastExtended';
+import ForecastExtentedContainer from './containers/ForecastExtentedContainer';
 
 import './App.css';
 
@@ -19,14 +19,7 @@ const cities = [
 
 class App extends Component {
 
-    constructor() {
-        super();
-        this.state = {city: null};
-    }
-
     render() {
-        const { city } = this.state;
-
         return (
             <Grid>
                 <Row>Titulo </Row> 
@@ -37,7 +30,7 @@ class App extends Component {
 
                     <Col xs = { 12 } md = { 6 }>
                         <div className = 'detail'>
-                            {  city && <ForecastExtended city = { city } />  } 
+                         <ForecastExtentedContainer /> 
                         </div> 
                     </Col>
                 </Row>
