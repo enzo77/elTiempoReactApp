@@ -7,7 +7,6 @@ import LocationList from './../components/LocationList';
 class LocationListContainer extends Component {
 
     handleSelectedLocation = city => {
-   
         this.props.setCity(city);
     }
 
