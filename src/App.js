@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import LocationListContainer from './containers/LocationListContainer';
-import ForecastExtendedContainer from './containers/ForecastExtendedContainer';
+import ForecastExtentedContainer from './containers/ForecastExtentedContainer';
 
 import './App.css';
 
@@ -30,7 +30,7 @@ class App extends Component {
 
                     <Col xs = { 12 } md = { 6 }>
                         <div className = 'detail'>
-                            <ForecastExtendedContainer  /> 
+                         <ForecastExtentedContainer /> 
                         </div> 
                     </Col>
                 </Row>
