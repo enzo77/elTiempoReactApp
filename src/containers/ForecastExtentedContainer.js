@@ -6,9 +6,8 @@ import ForecastExtended from './../components/ForecastExtended';
 class ForecastExtentedContainer extends Component {
     render() {
         return (
-            <div>
+            this.props.city && 
                 <ForecastExtended city = {this.props.city}/>
-            </div>
         );
     }
 }
